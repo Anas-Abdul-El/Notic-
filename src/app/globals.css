@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer components {
+    .color1 {
+        animation: colors 0.5s forwards;
+    }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+    .color2 {
+        animation: colors 0.5s 0.5s forwards;
+    }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+    .color3 {
+        animation: colors 0.5s 1s forwards;
+    }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    .color4 {
+        animation: colors 0.5s 1.5s forwards;
+    }
+
+    .color5 {
+        animation: colors 0.5s 2s forwards;
+    }
+
+    @keyframes colors {
+        40% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        70% {
+            opacity: 1;
+            transform: translateY(15px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .stroke {
+        -webkit-text-stroke: 5px black;
+        color: white;
+        animation: stroke 1s forwards;
+    }
+
+    @keyframes stroke {
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    nav {
+        animation: stroke 1s forwards;
+    }
+
+    .sidebar {
+        animation: slide 1s forwards;
+    }
+
+    @keyframes slide {
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .cards {
+        animation: appear 1s forwards;
+    }
+
+    .shad {
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.719);
+    }
+
+
+    @keyframes appear {
+        100% {
+            opacity: 1;
+        }
+    }
+
 }
