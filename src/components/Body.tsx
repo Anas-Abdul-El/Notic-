@@ -3,8 +3,8 @@ import type { Note } from '@/app/page'
 
 async function Body() {
 
-    const url = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
-    const res = await fetch(`/notes`, { cache: "no-store" })
+    const url = process.env.API_URL || "http://localhost:3000"
+    const res = await fetch(`${url}/notes`, { cache: "no-store" })
     const data: Note[] = await res.json()
 
     return (
