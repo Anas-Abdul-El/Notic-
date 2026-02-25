@@ -14,17 +14,20 @@ It allows users to *add, edit, delete, and search notes* easily, with a smooth a
 - 🎞 *Smooth animations* using [Framer Motion](https://www.framer.com/motion/)  
 - 📱 *Fully responsive* design for all devices  
 - 🗒 *Add, edit, delete, and search* your notes in real time  
-- 💾 *Server actions* for seamless CRUD operations  
+- 💾 *Server actions* + **Prisma** for seamless, persistent CRUD operations  
+- 🗃 **PostgreSQL-backed storage** so your notes live in a real database  
 - 🔍 *Search functionality* to quickly find your notes  
 
 ---
 
 ## 🛠 Tech Stack
 
-- *Framework:* Next.js  
-- *Animation:* Framer Motion  
-- *Language:* TypeScript / JavaScript  
-- *Styling:* Tailwind CSS  
+- *Framework:* Next.js 16  
+- *UI Library:* React 19  
+- *Language:* TypeScript  
+- *Styling:* Tailwind CSS (v4)  
+- *Database:* PostgreSQL  
+- *ORM:* Prisma  
 
 ---
 
@@ -40,23 +43,40 @@ It allows users to *add, edit, delete, and search notes* easily, with a smooth a
 ## 🏃‍♂ Getting Started
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/yourusername/notic.git
+   cd Notic-
+   ```
 
 2. Install dependencies:
 
-npm install
+   ```bash
+   npm install
+   ```
 
+3. Configure the database connection:
 
-3. Run the development server:
+   - Create a PostgreSQL database (local or hosted).
+   - Create a `.env` file in the project root and set:
 
-npm run dev
+   ```bash
+   DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DB_NAME"
+   ```
 
+4. Run Prisma migrations:
 
-4. Open http://localhost:3000 in your browser.
+   ```bash
+   npx prisma migrate dev
+   ```
 
+5. Run the development server:
 
+   ```bash
+   npm run dev
+   ```
 
+6. Open `http://localhost:3000` in your browser.
 
 ---
 
