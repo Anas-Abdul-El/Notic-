@@ -99,7 +99,7 @@ export default function AnimatedCards({ res }: Props) {
                                             <div className='m-10 h-full '>
                                                 <textarea
                                                     name="edit"
-                                                    className='flex text-xl p-1 text-white focus-within:outline-0 placeholder:text-white w-full h-full overflow-hidden'
+                                                    className='flex resize-none text-xl p-1 text-white focus-within:outline-0 placeholder:text-white w-full h-full overflow-hidden'
                                                     placeholder="Type something"
                                                     value={ele.content == "" || edit == ele.edit ? input : ele.content}
                                                     onChange={e => setInput(e.target.value)}
